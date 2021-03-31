@@ -1,0 +1,11 @@
+package kr.or.ddit.basic;
+
+public interface LambdaTestInterface1 {
+
+}
+interface LambdaTestInterface2 {
+	
+}
+interface LambdaTestInterface3 {
+	
+}

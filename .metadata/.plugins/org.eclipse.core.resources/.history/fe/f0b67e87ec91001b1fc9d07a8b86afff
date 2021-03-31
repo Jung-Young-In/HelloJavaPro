@@ -1,0 +1,15 @@
+package kr.or.ddit.udp;
+
+import java.io.IOException;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+
+public class UdpClient {
+	public void start() throws IOException {
+		
+		DatagramSocket datagramSocket = new DatagramSocket();
+		
+		InetAddress serverAddress = InetAddress.getByName("127.0.0.1");
+	}
+}
