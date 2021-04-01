@@ -1,0 +1,177 @@
+package kr.or.ddit.tcp;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+
+public class MultichatServer_whisper {
+
+	//대화명, Socket 저장할 Map 선언
+	Map<String, Socket> clients;
+	
+	//생성자
+	public MultichatServer_whisper() {
+		//동기화가 가능하도록 하는 Map 객체
+		clients = Collections.synchronizedMap(new HashMap<String, Socket>());
+	}
+	
+	//서버 시작 부분 
+	public void startServer() {
+		
+		Socket socket = null;
+		
+		try(ServerSocket serverSocket = new ServerSocket(7777)) {
+			System.out.println("서버가 시작되었습니다.");
+			
+			while(true) {
+				//accept() 메서드로 클라이언트의 접속을 대기 시키는 부분
+				socket = serverSocket.accept();
+				
+				System.out.println("[" + socket.getInetAddress() + " : " + socket.getPort() + "] 에서 접속하였습니다.");
+				
+				//메시지 전송 담당 스레드 생성
+				ServerReceiver receiver = new ServerReceiver(socket);
+				//실행
+				receiver.start();
+			}
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 대화방 즉, Map에 저장된 전체 유저에게 안내(입장과 퇴장 정보) 메시지를 전송하는 메서드
+	 * @param msg
+	 */
+	public void sendMessage(String msg) {
+
+		//Map의 대화명 추출(key)
+		Iterator<String> it = clients.keySet().iterator();
+		while(it.hasNext()) {
+			
+			try {
+				//대화명
+				String name = it.next();
+			
+				//socket outputstream(대화명) 구하는 부분
+				DataOutputStream dos = new DataOutputStream(clients.get(name).getOutputStream());
+				
+				//메시지 보내는 부분
+				dos.writeUTF(msg);
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * 대화방 즉, Map에 저장된 전체 유저에게 안내메시지 전송하는 메서드
+	 * @param msg
+	 * @param from
+	 */
+	public void sendMessage(String msg, String from) {
+		Iterator<String> it = clients.keySet().iterator();
+		while(it.hasNext()) {
+			try {
+				String name = it.next();
+				
+				DataOutputStream dos = new DataOutputStream(clients.get(name).getOutputStream());
+				
+				dos.writeUTF(from + " : " + msg);
+			}catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * 대화방의 Map에 저장된 유저 중 특정한 유저에게 귓속말 전송하는 메서드
+	 * @param msg
+	 * @param from
+	 * @param to
+	 */
+	public void sendMessage(String msg, String from, String to) {
+
+		try {
+			//보낼사람의 소켓 가져오는 부분
+			DataOutputStream dos = new DataOutputStream(clients.get(to).getOutputStream());
+			dos.writeUTF(from + "님의 귓속말 : " + msg);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 서버에서 클라이언트로 메시지 전송하는 스레드를 inner클래스로 정의
+	 * (부모 클래스의 멤버를 직접 사용 가능)
+	 */
+	class ServerReceiver extends Thread {
+		private Socket socket;
+		private DataInputStream dis;
+		private String name;
+		
+		public ServerReceiver(Socket socket) {
+			this.socket = socket;
+			
+			try {
+				//수신용
+				dis = new DataInputStream(socket.getInputStream());
+			}catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		@Override
+		public void run() {
+			try {
+				//클라이언트가 보내는 첫 메시지(대화명 수신)
+				name = dis.readUTF();
+				
+				//수신한 대화명을 다른 클라이언트들에게 메시지로 알림
+				sendMessage(name + "님이 입장하였습니다.");
+				
+				//대화명과 socket을  Map에 저장
+				clients.put(name, socket);
+				System.out.println("현재 접속자 수는 " + clients.size() + "명 입니다.");
+				
+				//이후에는 무한루프로 메시지를 보냄으로써 처리
+				while(dis != null) {
+					sendMessage(dis.readUTF(), name);
+				}
+			}catch (IOException e) {
+				e.printStackTrace();
+			}finally {
+				//이 영역은 클라이언트의 접속이 종료되었을 때 실행됨
+				sendMessage(name + "님이 퇴장하였습니다.");
+				
+				//Map에서 대화명 삭제
+				clients.remove(name);
+				
+				System.out.println(socket.getInetAddress() + " : " + socket.getPort() + "에서 접속을 종료하였습니다.");
+				System.out.println("현재 접속자 수는 " + clients.size() + "명 입니다.");
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new MultiChatServer_whisper().startServer();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
