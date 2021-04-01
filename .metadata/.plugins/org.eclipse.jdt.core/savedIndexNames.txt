@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.130+D:\A_TeachingMaterial\3.HighJava\workspace\High-Java\.metadata\.plugins\org.eclipse.jdt.core
 2408516978.index
 2142615786.index
@@ -5,9 +6,25 @@ INDEX VERSION 1.130+D:\A_TeachingMaterial\3.HighJava\workspace\High-Java\.metada
 327089254.index
 933280213.index
 846466916.index
+=======
+INDEX VERSION 1.131+E:\A_TeachingMaterial\3.HighJava\workspace\High-Java\.metadata\.plugins\org.eclipse.jdt.core
+1354096316.index
+1987182299.index
+1191949602.index
+2647599234.index
+139682954.index
+2075451510.index
+2651620598.index
+2028656148.index
+>>>>>>> be71b245afd6f524bc6ad28dd51eb1946bac83f6
 2839718740.index
+933280213.index
+1923789809.index
+2408516978.index
 2126294611.index
+327089254.index
 3740985860.index
+<<<<<<< HEAD
 2075451510.index
 2647599234.index
 4014242303.index
@@ -20,3 +37,8 @@ INDEX VERSION 1.130+D:\A_TeachingMaterial\3.HighJava\workspace\High-Java\.metada
 2028656148.index
 2651620598.index
 3454202191.index
+=======
+627788476.index
+846466916.index
+4014242303.index
+>>>>>>> be71b245afd6f524bc6ad28dd51eb1946bac83f6
