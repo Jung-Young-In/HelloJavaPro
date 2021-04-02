@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\A_TeachingMaterial\3.HighJava\workspace\High-Java"/>
+	</list>
 	<section name="ExternalProjectImportWizard">
 		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
@@ -15,6 +18,14 @@
 	<section name="ResourceNavigator">
 		<item value="Aggregate for window 1614664243869" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="204" key="DIALOG_X_ORIGIN"/>
+		<item value="197" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
 		<item value="false" key="FilterByLocation"/>

@@ -77,7 +77,7 @@ public class MultiChatServer_whisper {
 	 * @param from
 	 */
 	public void sendMessage(String msg, String from) {
-		Iterator<String> it = clients.keySet().iterator();
+		 Iterator<String> it = clients.keySet().iterator();
 		while(it.hasNext()) {
 			try {
 				String name = it.next();

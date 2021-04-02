@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
-<fullyQualifiedTypeName name="java.lang.Comparable"/>
-<fullyQualifiedTypeName name="kr.or.ddit.reflection.T01_ClassObjectTest"/>
-<fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicInternalFrameUI.InternalFramePropertyChangeListener"/>
-<fullyQualifiedTypeName name="kr.or.ddit.reflection.SampleVO"/>
-<fullyQualifiedTypeName name="javax.swing.text.StyledEditorKit.ForegroundAction"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Modifier"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
@@ -22,7 +16,6 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="kr.or.ddit.tcp.MultiChatServer.ServerReceiver"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
 <fullyQualifiedTypeName name="java.io.DataInputStream"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="java.rmi.RemoteException"/>
 <fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
 <fullyQualifiedTypeName name="kr.or.ddit.rmi.inf.RemoteInterface"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 </qualifiedTypeNameHistroy>
