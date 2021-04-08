@@ -97,20 +97,60 @@
  	<url-pattern>/T10_SessionListenerTest</url-pattern>
  </servlet-mapping>
  
- <listener>
- 	<display-name>MyServletContextListener</display-name>
- 	<listener-class>kr.or.ddit.basic.MyServletContextListener</listener-class>
- </listener>
+ <servlet>
+ 	<servlet-name>T11_ImageServletTest</servlet-name>
+ 	<servlet-class>kr.or.ddit.basic.T11_ImageServletTest</servlet-class>
+ </servlet>
  
- <listener>
-  	<display-name>MyServletRequestListener</display-name>
-  	<listener-class>kr.or.ddit.basic.MyServletRequestListener</listener-class>
- </listener>
+ <servlet-mapping>
+	<servlet-name>T11_ImageServletTest</servlet-name>
+	<url-pattern>/T11_ImageServletTest</url-pattern> 
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>T12_DownloadServletTest</servlet-name>
+ 	<servlet-class>kr.or.ddit.basic.T12_DownloadServletTest</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>T12_DownloadServletTest</servlet-name>
+ 	<url-pattern>/T12_DownloadServletTest</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>UploadServlet1</servlet-name>
+ 	<servlet-class>kr.or.ddit.upload.UploadServlet1</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>UploadServlet1</servlet-name>
+ 	<url-pattern>/upload1</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>UploadServlet2</servlet-name>
+ 	<servlet-class>kr.or.ddit.upload.UploadServlet2</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>UploadServlet2</servlet-name>
+ 	<url-pattern>/upload2</url-pattern>
+ </servlet-mapping>
+ 
+<!--  <listener> -->
+<!--  	<display-name>MyServletContextListener</display-name> -->
+<!--  	<listener-class>kr.or.ddit.basic.MyServletContextListener</listener-class> -->
+<!--  </listener> -->
+ 
+<!--  <listener> -->
+<!--   	<display-name>MyServletRequestListener</display-name> -->
+<!--   	<listener-class>kr.or.ddit.basic.MyServletRequestListener</listener-class> -->
+<!--  </listener> -->
   
- <listener>
-  	<display-name>MySessionAttributeListener</display-name>
-  	<listener-class>kr.or.ddit.basic.MySessionAttributeListener</listener-class>
- </listener>
+<!--  <listener> -->
+<!--   	<display-name>MySessionAttributeListener</display-name> -->
+<!--   	<listener-class>kr.or.ddit.basic.MySessionAttributeListener</listener-class> -->
+<!--  </listener> -->
   
   
  
