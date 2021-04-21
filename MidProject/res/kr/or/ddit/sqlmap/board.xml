@@ -11,7 +11,7 @@
 		사용하수있는 기본적인 태그들
 		<select></select>
 		<insert></insert>
-		<upadte></upadte>
+		<update></update>
 		<delete></delete>
 		
 		위 태그에서 사용되는 속성들

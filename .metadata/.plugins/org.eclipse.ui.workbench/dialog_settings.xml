@@ -27,7 +27,7 @@
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.export.ZipFile" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
-		<item value="org.eclipse.e4.ui.importer.wizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.import.ZipFile" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
@@ -39,6 +39,7 @@
 	<section name="ZipFileImportWizard">
 		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\PC-23\Documents\카카오톡 받은 파일\asdasdasdasdasd.zip"/>
 			<item value="C:\Users\PC-23\Documents\카카오톡 받은 파일\내꺼.zip"/>
 		</list>
 	</section>
